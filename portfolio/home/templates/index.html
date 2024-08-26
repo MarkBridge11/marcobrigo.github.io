@@ -1,0 +1,22 @@
+{% extends "base.html" %} 
+{% block title %} My Portfolio {% endblock %}
+{% block content %}
+<p> Hello, I'm Marco Brigo. </p>
+<ul class="list-unstyled">
+    <p>My previous experiences</p>
+    {% for experience in experiences %}
+    <li>
+        <p><span>{{experience.title}}:</span> {{experience.description}}</p>
+        <p>Started on: {{experience.start_date}} - Ended on: {% if experience.end_date %} {{experience.end_date}} {% else %} On going! {% endif %}</p>
+    </li> 
+    {% endfor %}
+</ul>
+
+<p>Technologies that I've worked with:</p>
+<p>
+{% for competencie in competencies %}
+    {{ competencie.name }}{% if not forloop.last %},{% else %}.{% endif %}
+{% endfor %}
+</p>
+{% endblock %}
+

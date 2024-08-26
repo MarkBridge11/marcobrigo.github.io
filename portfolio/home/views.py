@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from .models import Experiences,Competencies
 
-def hi(request):
-    return render(request,'home/index.html')
+def home(request):
+    experiences = Experiences.objects.all
+    competencies = Competencies.objects.all
+    return render(request,'index.html',{"experiences": experiences,"competencies":competencies})
