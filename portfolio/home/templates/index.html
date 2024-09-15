@@ -1,22 +1,54 @@
 {% extends "base.html" %} 
+{% load static %}
 {% block title %} My Portfolio {% endblock %}
 {% block content %}
-<p> Hello, I'm Marco Brigo. </p>
-<ul class="list-unstyled">
-    <p>My previous experiences</p>
-    {% for experience in experiences %}
-    <li>
-        <p><span>{{experience.title}}:</span> {{experience.description}}</p>
-        <p>Started on: {{experience.start_date}} - Ended on: {% if experience.end_date %} {{experience.end_date}} {% else %} On going! {% endif %}</p>
-    </li> 
+<script type="module" src="{% static 'home/js/main.js' %} "></script>
+<script type="module" src="{% static 'home/js/active_scroll_section.js' %} "></script>
+<section class="d-flex align-items-center justify-content-center vh-100 flex-column flex-md-row" id="home">
+    <h1 class="display-1 text-left mt-5">Hello,<br> I'm <strong>Marco Brigo</strong>.</h1>
+    <div id="container3D"></div>
+</section>
+
+<section class="text-section-center"  id="about">
+    <h4 class="display-4 text-section-center-title">Me, myself and I</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et sem elementum, tempor nisl nec, aliquet libero. Aenean in velit eu nibh blandit pretium sit amet molestie nisi. Cras porttitor felis ac ligula tincidunt, sed ornare libero pretium. Donec efficitur quis justo eu auctor. Vestibulum interdum ipsum ultricies, imperdiet turpis nec, commodo massa. Nulla vitae nisi ut metus molestie luctus. Vivamus quis congue risus. Morbi dolor velit, vehicula eget consectetur eu, hendrerit id erat.Nulla aliquet ante non ornare gravida. Maecenas scelerisque tellus a euismod gravida. Ut hendrerit quam ac arcu finibus finibus. Etiam vulputate porttitor lectus, in tristique risus.</p>
+</section>
+
+<section class="d-flex align-items-center justify-content-center vh-100 flex-row" id="edu">
+     <div id="step_progress_bar">
+        <span class="dot_completed"></span>
+        <span class="dot_completed"></span>
+        <span class="dot_notcompleted"></span>
+    </div> 
+    <div>
+        <h4 class="display-4 text-section-center-title">Education</h4>  
+            {% for edu in education %}
+                <p class="align-self-start">{{ edu.title }} - {{ edu.description }}<br>
+                Started on: {{ edu.start_date }} | Ended on: {% if edu.end_date %} {{ edu.end_date }} {% else %} On going! {% endif %}</p>
+            {% endfor %}
+    </div>
+</section>
+
+<section class="text-section-center" id="techno">
+    <h4 class="display-4 text-section-center-title">Skills</h4> 
+    <p>In these years I've worked with many technologies and tools thanks to the University courses, projects done in my free time and at the internship. The following list describe technologies and tools with whom I have discrete abilities:</p>
+    <h5 class="display-5 text-section-center-title">Technologies that I've worked with:</h5>
+    <p class="align-self-start">
+    {% for competencie in competencies %}
+        {{ competencie.name }}{% if not forloop.last %},{% else %}.{% endif %}
     {% endfor %}
-</ul>
+    </p>
 
-<p>Technologies that I've worked with:</p>
-<p>
-{% for competencie in competencies %}
-    {{ competencie.name }}{% if not forloop.last %},{% else %}.{% endif %}
-{% endfor %}
-</p>
+    <h5 class="display-5 text-section-center-title">Tools that I've used:</h5>
+    <p class="align-self-start">
+    {% for tool in tools %}
+        {{ tool.name }}{% if not forloop.last %},{% else %}.{% endif %}
+    {% endfor %}
+    </p>
+</section>
+
+<section class="text-section-center" id="contact">
+    <h4 class="display-4 text-section-center-title">Contact me</h4>
+    <p class="align-self-start"> Reach me compiling the following fields.</p>
+</section>
 {% endblock %}
-

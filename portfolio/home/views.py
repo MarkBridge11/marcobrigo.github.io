@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from .models import Experiences,Competencies
+from .models import Education,Competencies,Tools
 
 def home(request):
-    experiences = Experiences.objects.all
+    education = Education.objects.all
     competencies = Competencies.objects.all
-    return render(request,'index.html',{"experiences": experiences,"competencies":competencies})
+    tools = Tools.objects.all
+    return render(request,'index.html',{"education": education,"competencies":competencies,"tools":tools})

@@ -5,28 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
       {% block title %}
-        Django App
+        Django App  
       {% endblock %}
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  rel="stylesheet" />
+
+    <!-- Import Montserrat from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Optional Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" ></script>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home/css/styles.css' %}">
+    
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="">My Portfolio</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <a class="navbar-brand" href="">Marco Brigo</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="">Home</a>
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item active" id="nav-item-home">
+            <a class="nav-link" href="#home">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+          <li class="nav-item" id="nav-item-about">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item" id="nav-item-edu">
+            <a class="nav-link" href="#edu">Education</a>
+          </li>
+          <li class="nav-item" id="nav-item-techno">
+            <a class="nav-link" href="#techno">Skills</a>
+          </li>
+          <li class="nav-item" id="nav-item-contact">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item" id="none">
+            <a class="nav-link" href="https://www.instagram.com/markbrigo/" id="insta-icon">
+              <img src={% static 'home/images/instagram (2).png' %} alt="Icon">
+            </a>
           </li>
         </ul>
       </div>
     </nav>
+  
     <div class="container">{% block content %} {% endblock %}</div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" ></script>
   </body>
 </html>

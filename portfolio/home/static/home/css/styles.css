@@ -1,0 +1,139 @@
+:root {
+    --font-primary: 'Montserrat', sans-serif;
+    --bkgn-color: #F5F5F5;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    background-color: var(--bkgn-color);
+}
+
+#insta-icon {
+    padding-top: 0.45rem
+}
+
+#insta-icon img {
+    transition: opacity 0.3s ease; 
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#insta-icon img:hover {
+    opacity: 0.5; 
+}
+
+h1.display-1{
+    font-weight: 600;
+}
+
+h4.display-4,h5.display-5{
+    font-weight: 600;
+}
+
+p{
+    font-weight: 500;
+}
+
+.text-section-center {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;    /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    min-height: 100vh;          /* Full viewport height */
+    text-align: left;       /* Align text to the left */
+}
+
+.text-section-center-title {
+    align-self: flex-start; /* Align <h4> to the start of the flex container (left) */
+    margin: 0;              /* Remove default margin */
+}
+
+#container3D{
+    margin-top: 9em;
+    width: 50vw;        
+    height: 50vh;     
+    position: relative; 
+}
+
+#step_progress_bar {
+    height: 15em;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-around;
+    align-content: center;
+    margin-right: 1em; 
+    margin-top: 3em;
+}
+
+.dot_completed, .dot_notcompleted {
+    position: relative;
+    height: 1.5em; 
+    width: 1.5em;
+    background-color: #4bb543; 
+    border-radius: 50%; 
+}
+
+.dot_notcompleted {
+    background-color: #bbb;
+}
+
+.dot_completed::after{
+    position: absolute;
+    content: "";
+    border-bottom: 5em solid #4bb543; /* Line below completed dot */
+    width: 20%;
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+
+
+
+/*Added things on mobile devices */
+/*To prevent the h1 to hide under the fixed bar*/
+@media (max-width: 767.98px) {
+    .navbar {
+        position: relative !important;
+        margin-bottom: 5rem; 
+    }
+
+    #container3D{
+        margin-top: 5em !important;
+    }
+
+    #step_progress_bar {
+        height: 20em !important;
+        margin-top: 0em !important;
+    }
+
+    .dot_completed::after{
+        border-bottom: 7em solid #4bb543 !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #home h1{
+        margin-top: 10rem !important;
+    }
+
+    #container3D{
+        margin-top: 5em !important;
+        margin-bottom: 7em !important;
+    }
+
+    #about h4{
+        margin-top: 10rem !important;
+    }
+}
+
+/* To include what I've putted in the middle of the navbar in the burger menu*/
+@media (min-width: 992px) {
+    .navbar-nav {
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      justify-content: center;
+    }
+  }
