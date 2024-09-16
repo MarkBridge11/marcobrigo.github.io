@@ -1,6 +1,8 @@
 :root {
     --font-primary: 'Montserrat', sans-serif;
     --bkgn-color: #F5F5F5;
+    --completed-path: #4bb543;
+    --not-completed-path: #bbb;
 }
 
 body {
@@ -37,16 +39,16 @@ p{
 
 .text-section-center {
     display: flex;
-    flex-direction: column; /* Stack children vertically */
-    align-items: center;    /* Center children horizontally */
-    justify-content: center; /* Center children vertically */
-    min-height: 100vh;          /* Full viewport height */
-    text-align: left;       /* Align text to the left */
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center; 
+    min-height: 100vh;          
+    text-align: left;       
 }
 
 .text-section-center-title {
-    align-self: flex-start; /* Align <h4> to the start of the flex container (left) */
-    margin: 0;              /* Remove default margin */
+    align-self: flex-start; 
+    margin: 0;             
 }
 
 #container3D{
@@ -71,24 +73,56 @@ p{
     position: relative;
     height: 1.5em; 
     width: 1.5em;
-    background-color: #4bb543; 
+    background-color: var(--completed-path); 
     border-radius: 50%; 
 }
 
 .dot_notcompleted {
-    background-color: #bbb;
+    background-color: var(--not-completed-path);
 }
 
 .dot_completed::after{
     position: absolute;
     content: "";
-    border-bottom: 5em solid #4bb543; /* Line below completed dot */
+    border-bottom: 5em solid var(--completed-path); /* Line below completed dot */
     width: 20%;
     left: 50%; 
     transform: translateX(-50%); 
 }
 
+.form{
+    width: 40em;
+    display: flex;
+    flex-direction: column;
+}
 
+.form input{
+    margin-bottom: 1.2em;
+}
+
+.form textarea, .form input{
+    border-radius: 8px;
+    border-color: transparent;
+}
+
+.form button {
+    display: block;
+    margin-top: 2em;
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border-color: #000000;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 700;
+    font-size: 18px;
+  
+    transition: 300ms all;
+  }
+
+  .form button:hover {
+    background-color: #f7f7f7;
+  }
 
 
 /*Added things on mobile devices */
@@ -125,6 +159,10 @@ p{
 
     #about h4{
         margin-top: 10rem !important;
+    }
+
+    .form{
+        width: 20em;
     }
 }
 
