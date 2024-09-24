@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "three": "^0.168.0"
+    "three": "^0.168.0",
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {},
   "scripts": {

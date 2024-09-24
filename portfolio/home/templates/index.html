@@ -4,8 +4,10 @@
 {% block content %}
 <script type="module" src="{% static 'home/js/main.js' %} "></script>
 <script type="module" src="{% static 'home/js/active_scroll_section.js' %} "></script>
+<script type="module" src="{% static 'home/js/type_animation.js' %} "></script>
 <section class="d-flex align-items-center justify-content-center vh-100 flex-column flex-md-row" id="home">
-    <h1 class="display-1 text-left mt-5">Hello,<br> I'm <strong>Marco Brigo</strong>.</h1>
+    <div class="typed-text"><h1 class="display-1 text-left mt-5" >Hello, <br> I'm <strong>Marco Brigo</strong></h1></div>
+    <h1 class="display-1 text-left mt-5" >&gt;<span class = "h1_title"></span></h1>
     <div id="container3D"></div>
 </section>
 

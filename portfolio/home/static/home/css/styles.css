@@ -1,8 +1,10 @@
 :root {
     --font-primary: 'Montserrat', sans-serif;
-    --bkgn-color: #F5F5F5;
+    --bkgn-color: #F7F7F7;
     --completed-path: #4bb543;
     --not-completed-path: #bbb;
+    --headings: #333333;
+    --active-item: #607D8B;
 }
 
 body {
@@ -11,6 +13,18 @@ body {
     background-color: var(--bkgn-color);
 }
 
+.navbar-nav .nav-link {
+    font-size: 1.2rem; 
+}
+
+
+/* Brand name css */
+.navbar-brand{
+    font-size: 1.8rem;
+}
+
+
+/* About instagram icon */
 #insta-icon {
     padding-top: 0.45rem
 }
@@ -25,16 +39,23 @@ body {
     opacity: 0.5; 
 }
 
+
+/* Headings */
 h1.display-1{
     font-weight: 600;
+    color: var(--headings);
 }
 
 h4.display-4,h5.display-5{
     font-weight: 600;
+    color: var(--headings);
 }
+
+
 
 p{
     font-weight: 500;
+    color: #4A4A4A;
 }
 
 .text-section-center {
@@ -51,12 +72,28 @@ p{
     margin: 0;             
 }
 
+/*About section animation */
+#about{
+    opacity: 0;
+    transform: translateX(-100%); 
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+@keyframes slideInFromLeft {
+    to {
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
+/*3D item container */
 #container3D{
     margin-top: 9em;
     width: 50vw;        
     height: 50vh;     
     position: relative; 
 }
+
 
 #step_progress_bar {
     height: 15em;
@@ -73,7 +110,7 @@ p{
     position: relative;
     height: 1.5em; 
     width: 1.5em;
-    background-color: var(--completed-path); 
+    background-color: var(--success); 
     border-radius: 50%; 
 }
 
@@ -84,7 +121,7 @@ p{
 .dot_completed::after{
     position: absolute;
     content: "";
-    border-bottom: 5em solid var(--completed-path); /* Line below completed dot */
+    border-bottom: 5em solid var(--success); /* Line below completed dot */
     width: 20%;
     left: 50%; 
     transform: translateX(-50%); 
@@ -112,7 +149,7 @@ p{
     padding: 12px 20px;
     border-radius: 8px;
     border-color: #000000;
-    background-color: #ffffff;
+    background-color: #4DB6AC;
     color: #000000;
     font-weight: 700;
     font-size: 18px;
